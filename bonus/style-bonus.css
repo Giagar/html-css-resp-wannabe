@@ -30,7 +30,7 @@ html {
 /* ----desktop 1920px */
 .wrapper {
   max-width: 1400px;
-  min-width: 320px;
+  min-width: 190px;
   margin: 0 auto;
 }
 
@@ -83,26 +83,50 @@ footer {
 }
 
 /* ----MEDIA QUERIES */
-@media screen and (min-width: 328px) {
+@media screen and (max-width: 1400px) {
   .header-description::after {
-    content: "This is the smartphone version";
+    content: "This is the desktop HD version";
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1200px) {
+  .header-description::after {
+    content: "This is the desktop standard version";
+  }
+
+  .mobile-view {
+    display: none;
+  }
+
+  .desktop-view {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .header-description::after {
     content: "This is the tablet version";
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 328px) {
   .header-description::after {
-    content: "This is the desktop standard version";
+    content: "This is the smartphone version";
   }
-}
 
-@media screen and (min-width: 1400px) {
-  .header-description::after {
-    content: "This is the desktop HD version";
+  .mobile-view {
+    display: block;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  footer {
+    height: 115px;
   }
 }
